@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-typescript-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "tsc",
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js",
+    "dev": "run-p dev:*",
+    "dev:tsc": "tsc --watch --preserveWatchOutput",
+    "dev:node": "node --watch dist/index.js",
+    "dev:esbuild": "pnpm run build --watch",
+    "start": "node dist/index.js"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "author": "Moinul Moin <contact@moinulmoin.com> (https://moinulmoin.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.5",
+    "esbuild": "^0.19.11",
+    "dotenv": "^16.3.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
